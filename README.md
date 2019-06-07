@@ -3,11 +3,12 @@
 [![Greenkeeper badge](https://badges.greenkeeper.io/DrPaulBrewer/gini-csv.svg)](https://greenkeeper.io/)
 [![Build Status](https://travis-ci.org/DrPaulBrewer/gini-csv.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/gini-csv)
 
-Compute the gini coefficient of the numeric .csv file data, with small sample correction.
-
-## Installation
+Compute the Gini coefficient for each row of the indicated numeric .csv file data, with small sample correction.
 
 This is a standalone program based on npm:gini-ss, npm:commander, and various csv-data streaming libraries.
+
+
+## Installation
 
 For global installation:
 
@@ -15,7 +16,7 @@ For global installation:
 
 ## Usage
 
-<pre>
+```
 Usage: gini-csv [options] [fromFilePath] [toFilePath]
 
 Options:
@@ -24,7 +25,7 @@ Options:
   -n, --nocopy         do not copy Gini input columns to output file
   -v, --verbose        print more status messages
   -h, --help           output usage information
-</pre>
+```
 
 ## Small Sample Correction
 
