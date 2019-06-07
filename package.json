@@ -1,0 +1,35 @@
+{
+  "name": "gini-csv",
+  "version": "0.1.0",
+  "description": "Calculates Gini coefficient with gini-ss and adds to csv file",
+  "main": "bin.js",
+  "directories": {
+    "test": "test"
+  },
+  "scripts": {
+    "test": "npm test"
+  },
+  "repository": {
+    "type": "git",
+    "url": "git+https://github.com/drpaulbrewer/gini-csv.git"
+  },
+  "keywords": [
+    "economics",
+    "Gini-coefficient",
+    "inequality",
+    "csv"
+  ],
+  "author": "drpaulbrewer@eaftc.com",
+  "license": "MIT",
+  "bugs": {
+    "url": "https://github.com/drpaulbrewer/gini-csv/issues"
+  },
+  "homepage": "https://github.com/drpaulbrewer/gini-csv#readme",
+  "dependencies": {
+    "commander": "^2.20.0",
+    "csv-parse": "^4.4.3",
+    "csv-stringify": "^5.3.0",
+    "gini-ss": "^0.2.1",
+    "stream-transform": "^2.0.0"
+  }
+}
