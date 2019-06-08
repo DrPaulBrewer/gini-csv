@@ -33,14 +33,20 @@ Options:
 
 ## Examples
 
+### Example 1
+
     gini-csv -m y profit.csv profitWithGini.csv
 
 Reads from the input file `profit.csv`, matching against columns containing "y" as Gini calculation input columns, and writes
 the output file profitWithGini.csv.
 
+### Example 2
+
     gini-csv -m SumProfit -n in.csv out.csv
 
 Reads from the input file `in.csv`, matching against columns containing "SumProfit" as Gini calculation input columns, and writes the output file `out.csv`.  The `-n`, short for `--nocopy` causes the Gini input columns to be omitted from the output file.  
+
+### Example 3
 
     gini-csv -m Participant --sum in.csv out.csv
 
