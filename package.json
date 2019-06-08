@@ -1,6 +1,6 @@
 {
   "name": "gini-csv",
-  "version": "0.2.0",
+  "version": "0.2.1",
   "description": "Calculates Gini coefficient with gini-ss and adds to csv file",
   "bin": "bin.js",
   "directories": {
