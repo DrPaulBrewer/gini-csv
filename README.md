@@ -50,7 +50,7 @@ Reads from the input file `in.csv`, matching against columns containing "SumProf
 
     gini-csv -m Participant --sum in.csv out.csv
 
-Reads from the input file `in.csv`, matching against columns containing "Participant" as Gini calculation input columns, and writes the output file `out.csv`.  Each Gini input column will first be summed over all rows in the entire file.  The `out.csv` file will consist of a header row and a single data row resulting from aggregating the relevant matching data and calculating the Gini coefficient.  The columns will be the constant columns in the data, the "*Participant*" columns, and the Gini coefficjent.
+Reads from the input file `in.csv`, matching against columns containing "Participant" as Gini calculation input columns, and writes the output file `out.csv`.  Each Gini input column will first be summed over all rows in the entire file.  The `out.csv` file will consist of a header row and a single data row resulting from aggregating the relevant matching data and calculating the Gini coefficient.  The columns will be the constant columns in the data, the "*Participant*" columns, and the Gini coefficient.
 
 ## Small Sample Correction
 
