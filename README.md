@@ -76,7 +76,7 @@ run the `gini-csv` command, matching the columns in the input file `in.csv` that
 the Gini-coefficient calculation.  It will write the results to the file "/data/out.csv" in the container, which should then
 appear at `/research/123/out.csv` in the computer.  
 
-Note: The "\" characters are for line continuation and should be omitted if the entire command is typed onto one line.
+Note: The backslash (`\`) characters are for line continuation and should be omitted if the entire command is typed onto one line.
 
 
 ## Small Sample Correction
