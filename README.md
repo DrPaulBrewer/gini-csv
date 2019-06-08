@@ -52,6 +52,25 @@ Reads from the input file `in.csv`, matching against columns containing "SumProf
 
 Reads from the input file `in.csv`, matching against columns containing "Participant" as Gini calculation input columns, and writes the output file `out.csv`.  Each Gini input column will first be summed over all rows in the entire file.  The `out.csv` file will consist of a header row and a single data row resulting from aggregating the relevant matching data and calculating the Gini coefficient.  The columns will be the constant columns in the data, the "*Participant*" columns, and the Gini coefficient.
 
+## Temporary Usage via Docker without node/npm Installation
+
+If you have installed [Docker](https://docs.docker.com/install/), you don't have to install the node/npm or gini-csv software.
+
+Docker is a system for managing and running lightweight virtual machines, called containers, in relatively controlled isolation from your machine and from each other.  
+
+A container for gini-csv is posted on DockerHub at:
+
+drpaulbrewer/gini-csv
+
+### Example Docker Usage
+
+docker run -it -v /research/123:/data drpaulbrewer/gini-csv gini-csv -m Profit /data/in.csv /data/out.csv
+
+This docker command will download the container image `drpaulbrewer/gini-csv` if you don't have it.  The `-v` option attaches the directory `/research/123` from your computer to the directory `/data` in the docker container.  It will
+run the `gini-csv` command, matching the columns in the input file `in.csv` that have "Profit" in the name as the inputs for
+the Gini-coefficient calculation.  It will write the results to the file "/data/out.csv" in the container, which should then
+appear at `/research/123/out.csv` in the computer.
+
 ## Small Sample Correction
 
 The Gini coefficient with small sample correction has a value of 1.0 for the case of *perfect inequality*, when
