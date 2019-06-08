@@ -60,7 +60,7 @@ Docker is a system for managing and running lightweight virtual machines, called
 
 It is unclear whether installing and using Docker is really any easier than installing and using nodejs directly. But it does add a second way to get started.  
 
-A container for gini-csv is posted on [DockerHub](https;//hub.docker.com) at:
+A container for gini-csv is posted on [DockerHub](https://hub.docker.com) at:
 
     drpaulbrewer/gini-csv
 
