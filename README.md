@@ -58,18 +58,26 @@ If you have installed [Docker](https://docs.docker.com/install/), you don't have
 
 Docker is a system for managing and running lightweight virtual machines, called containers, in relatively controlled isolation from your machine and from each other.  
 
-A container for gini-csv is posted on DockerHub at:
+It is unclear whether installing and using Docker is really any easier than installing and using nodejs directly. But it does add a second way to get started.  
 
-drpaulbrewer/gini-csv
+A container for gini-csv is posted on [DockerHub](https;//hub.docker.com) at:
+
+    drpaulbrewer/gini-csv
 
 ### Example Docker Usage
 
-docker run -it -v /research/123:/data drpaulbrewer/gini-csv gini-csv -m Profit /data/in.csv /data/out.csv
+    docker run -it \
+       -v /research/123:/data \
+       drpaulbrewer/gini-csv \
+       gini-csv -m Profit /data/in.csv /data/out.csv
 
 This docker command will download the container image `drpaulbrewer/gini-csv` if you don't have it.  The `-v` option attaches the directory `/research/123` from your computer to the directory `/data` in the docker container.  It will
 run the `gini-csv` command, matching the columns in the input file `in.csv` that have "Profit" in the name as the inputs for
 the Gini-coefficient calculation.  It will write the results to the file "/data/out.csv" in the container, which should then
-appear at `/research/123/out.csv` in the computer.
+appear at `/research/123/out.csv` in the computer.  
+
+Note: The "\" characters are for line continuation and should be omitted if the entire command is typed onto one line.
+
 
 ## Small Sample Correction
 
