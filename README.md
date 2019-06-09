@@ -23,6 +23,7 @@ Usage: gini-csv [options] [fromFilePath] [toFilePath]
 
 Options:
   -m, --match <match>  use column names containing <match> as Gini calculation input columns (required)
+  -r, --round <digits> round Gini coefficient to specified digits
   -V, --version        output the version number
   -s, --sum            sum all rows and calculate Gini coefficient once for entire file
   -n, --nocopy         do not copy Gini input columns to output file
@@ -35,10 +36,9 @@ Options:
 
 ### Example 1
 
-    gini-csv -m y profit.csv profitWithGini.csv
+    gini-csv -m y -r 2 profit.csv profitWithGini.csv
 
-Reads from the input file `profit.csv`, matching against columns containing "y" as Gini calculation input columns, and writes
-the output file profitWithGini.csv.
+Reads from the input file `profit.csv`, matching against columns containing "y" as Gini calculation input columns, rounds the calculated Gini Coefficient to 2 digits,  and writes the output file profitWithGini.csv.
 
 ### Example 2
 
@@ -78,6 +78,12 @@ appear at `/research/123/out.csv` in the computer.
 
 Note: The backslash (`\`) characters are for line continuation and should be omitted if the entire command is typed onto one line.
 
+## Bad or Missing Data in Gini inputs
+
+Blank columns and non-numeric data are preserved in outputs unless `--nocopy` is set.
+
+Blank columns and non-numeric data are treated as a zero entry for calculating the Gini coefficient, and will
+therefore yield a higher Gini coefficient than if these columns were completely ignored.
 
 ## Small Sample Correction
 

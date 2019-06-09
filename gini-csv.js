@@ -118,6 +118,8 @@ function giniRowSplicer(opt) {
         .map((v) => (+v || 0))
       );
       gini = giniSS(inData);
+      if (opt.round!==undefined)
+        gini = gini.toFixed(+opt.round);
     }
     row++;
     if (opt && opt.verbose && (row % 1000 === 0)) console.log("at row: " + row);
@@ -131,12 +133,13 @@ function startPipeline(fromFilePath, toFilePath, options) {
   const match = options && options.match;
   const startDate = Date.now();
   if (options && options.verbose) {
-    console.log(new Date(startDate).toUTCString() + " -- " + "gini-csv");
+    console.log(new Date(startDate).toUTCString() + " -- " + "gini-csv v"+options.version());
     console.log("input  file: ", fromFilePath || 'stdin');
     console.log("output file: ", toFilePath || 'stdout');
     console.log("match      : " + match);
     if (options.sum) console.log("sum        : true, summing over all rows before Gini calculation");
     if (options.nocopy) console.log("nocopy     : true, omitting Gini-calculation inputs from output file");
+    if (options.round!==undefined) console.log("round      : "+options.round+" digits");
   }
   if ((typeof(fromFilePath) === "string") && (fromFilePath.length) && (fromFilePath === toFilePath)) {
     console.error("Conflict:  fromFilePath and toFilePath must be different");
@@ -183,11 +186,12 @@ function startPipeline(fromFilePath, toFilePath, options) {
 }
 
 (program
-  .version('0.2.0')
+  .version('0.3.0')
   .arguments('[fromFilePath] [toFilePath]')
   .option('-m, --match <match>', 'use column names containing <match> as Gini calculation input columns')
   .option('-n, --nocopy', 'do not copy Gini input columns to output file')
   .option('-s, --sum', 'sum all rows and calculate Gini coefficient once for entire file')
+  .option('-r, --round <digits>','round Gini coefficient to specified digits')
   .option('-v, --verbose', 'print more status messages')
   .action(startPipeline)
   .parse(process.argv)
