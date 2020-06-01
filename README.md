@@ -1,6 +1,6 @@
 # gini-csv
 
-[![Greenkeeper badge](https://badges.greenkeeper.io/DrPaulBrewer/gini-csv.svg)](https://greenkeeper.io/)
+
 [![Build Status](https://travis-ci.org/DrPaulBrewer/gini-csv.svg?branch=master)](https://travis-ci.org/DrPaulBrewer/gini-csv)
 
 Compute the Gini coefficient for each row of the indicated numeric .csv file data, with small sample correction.
