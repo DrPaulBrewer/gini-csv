@@ -26,7 +26,7 @@
   },
   "homepage": "https://github.com/drpaulbrewer/gini-csv#readme",
   "dependencies": {
-    "commander": "^2.20.0",
+    "commander": "^2.20.3",
     "csv-parse": "^4.4.3",
     "csv-stringify": "^5.3.0",
     "gini-ss": "^0.2.1",
